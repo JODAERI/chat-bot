@@ -3,15 +3,21 @@ import {Route, Routes} from "react-router-dom";
 import MainPage from "./pages/main";
 import styled from "styled-components";
 import Chat from "./pages/chat";
+import Header from "./components/common/Header";
+import Input from "./components/common/Input";
 
 function App() {
   return (
     <Wrapper>
         <Container>
-            <Routes>
-                <Route path={'/'} element={<MainPage/>}/>
-                <Route path={'/chat'} element={<Chat/>}/>
-            </Routes>
+            <Header/>
+            <Pages>
+                <Routes>
+                    <Route path={'/'} element={<MainPage/>}/>
+                    <Route path={'/chat'} element={<Chat/>}/>
+                </Routes>
+            </Pages>
+            <Input/>
         </Container>
     </Wrapper>
   );
@@ -31,7 +37,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     width: ${({theme}) => theme.tablet};;
-    background: white;
+    //background: white;
     height: 100vh;
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -40,5 +46,8 @@ const Container = styled.div`
         width: 100vw;
         height: 100vh;
     }
+`
 
+const Pages = styled.div`
+    
 `
