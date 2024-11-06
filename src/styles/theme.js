@@ -1,21 +1,21 @@
 const theme = {
     colors :{
-        mainColor: "#CFE9DC",
-        mainColorDark: "#A0D6BB",
-        white: "#ffffff",
-        darkGray: "#616161",
-        lightGray: "#A9A9A9",
-        darkMint: "#419F70",
+        logoFont: "#1A245A",
+        btnFont: "#666D91",
+        iconColor: "#B2B6C8",
+        btnBorder: "#B2B6C8",
+        inputBorder: "#B2B6C8",
+        inputFont : "#666D91",
+        description: '#747474'
     },
     backgroundColor: {
         background: "#F3F5F9",
-        mainColorDark: "#A0D6BB",
-        white: "#ffffff",
-        darkGray: "#616161",
-        lightGray: "#A9A9A9",
+        inputBack: "#FFFFFF",
+        btnBack: "#FFFFFF",
     },
     mobile: `430px`,
     tablet: "820px",
+
 };
 
 export default theme;
