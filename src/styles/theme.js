@@ -6,7 +6,8 @@ const theme = {
         btnBorder: "#B2B6C8",
         inputBorder: "#B2B6C8",
         inputFont : "#666D91",
-        description: '#747474'
+        description: '#747474',
+        chatFont:"#3D3D3D"
     },
     backgroundColor: {
         background: "#F3F5F9",
