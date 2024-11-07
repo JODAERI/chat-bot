@@ -10,9 +10,9 @@ function MenuBtn({icon, text}) {
         <>
             <Container>
                 <ItemBox>
-                    <LogoBox>
+                    <IconBox>
                         {icon}
-                    </LogoBox>
+                    </IconBox>
                     <TextBox>
                         {formatText(text)}
                     </TextBox>
@@ -25,7 +25,7 @@ function MenuBtn({icon, text}) {
 export default MenuBtn;
 
 const Container = styled.div`
-    border: solid 1px ${({theme}) => theme.colors.btnBorder};
+    border: solid 1px ${({theme}) => theme.borderColor.btnBorder};
     border-radius: 20px;
     width: 127px;
     height: 117px;
@@ -33,8 +33,10 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     margin: 5px;
-    background: ${({theme})=>theme.backgroundColor.btnBack}
- 
+    background: ${({theme})=>theme.backgroundColor.btnBack};
+    &:hover{
+        border: solid 2px ${({theme}) => theme.borderColor.btnBorder};
+    }
 `
 
 
@@ -42,14 +44,16 @@ const Container = styled.div`
 const ItemBox =styled.div`
     color: ${({theme}) => theme.colors.iconColor};
     margin: 10px;
+
 `
 
 
-const LogoBox=styled.div`
+const IconBox=styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 5px;
+   
 `
 
 const TextBox = styled.div`
