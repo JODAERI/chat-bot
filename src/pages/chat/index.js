@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Recommendation from "../../components/chat/Recommendation";
 import {ChatLogo} from "../../components/chat/ChatLogo";
+import ChatBotTimeStamp from "../../components/chat/ChatBotTimeStamp";
 
 const test = [
     '인증서 설치는 어떻게 하나요?',
@@ -15,13 +16,14 @@ const test = [
 function Chat() {
     return (
         <>
-            <Wrapper>
-                <ChatLogo/>
-                {test.map((item)=>(
-                    <Recommendation question={item}/>
-                ))}
+            <ProfileBox>
+                <ChatBotTimeStamp time={'2.03 PM, 28 Sep'}/>
+            </ProfileBox>
+            {test.map((item)=>(
+                <Recommendation question={item}/>
+            ))}
 
-            </Wrapper>
+
         </>
 
     );
@@ -29,6 +31,8 @@ function Chat() {
 
 export default Chat;
 
-const Wrapper = styled.div`
-
+const ProfileBox = styled.div`
+    display: flex;
+    justify-content: center;
+    text-align: center;
 `
