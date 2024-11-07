@@ -22,8 +22,13 @@ const LogoBox = styled.div`
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 30px;
- 
-    
+    position: fixed;  // 헤더를 고정 위치로 설정
+    top: 0;
+    left: 0;
+    width: 100%;      // 전체 화면 너비 차지
+    z-index: 1000;
+    background: ${({theme}) => theme.backgroundColor.background};
+
 `
 const LogoItem = styled.div`
     @font-face {
