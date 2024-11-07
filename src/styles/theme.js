@@ -13,6 +13,8 @@ const theme = {
         background: "#F3F5F9",
         inputBack: "#FFFFFF",
         btnBack: "#FFFFFF",
+        userQuestion: '#CCCEDA',
+        chatbotAnswer:'#FFFFFF',
     },
     borderColor:{
         hoverBorder: "#1A245A",
