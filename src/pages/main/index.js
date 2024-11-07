@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import MenuBtn from "../../components/main/MenuBtn";
 import {BtnIcons} from "../../components/main/BtnIcons";
+import {Link} from "react-router-dom";
 
 function MainPage() {
     return (
@@ -14,11 +15,14 @@ function MainPage() {
                         무엇을 찾고 계신가요?
                        </ServiceDescription>
                     <BtnBox>
-                        <BtnItem>
-                            {BtnIcons.map((item) =>
-                                <MenuBtn icon={item.icon()} text={item.text}/>
-                            )}
-                        </BtnItem>
+                        <Link to={'/chat'} style={{ textDecoration: "none"}}>
+                            <BtnItem>
+                                {BtnIcons.map((item) =>
+                                    <MenuBtn icon={item.icon()} text={item.text}/>
+                                )}
+                            </BtnItem>
+                        </Link>
+
                     </BtnBox>
                 </ContentsBox>
             </Wrapper>
