@@ -24,11 +24,12 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     padding-top: 45px;
+    margin-bottom: 10px;
     
 `
 const InputBox = styled.div`
     border-radius: 10px;
-    border: solid 1px ${({theme})=>theme.colors.inputBorder};
+    border: solid 1px ${({theme})=>theme.borderColor.inputBorder};
     height: 57px;
     background:  ${({theme})=>theme.backgroundColor.inputBack};
     width: 80%;
