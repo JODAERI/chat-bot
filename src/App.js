@@ -26,6 +26,7 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
+    padding-top: 120px;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
