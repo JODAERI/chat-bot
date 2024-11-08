@@ -7,7 +7,6 @@ function ChatbotAnswer({answer, timeStamp }) {
         <>
             <Wrapper>
                 <ContentsBox>
-
                     <ChatBotTimeStamp time={timeStamp}/>
                     <AnswerBox>
                         {answer}
@@ -41,9 +40,11 @@ const AnswerBox = styled.div`
     background: ${({theme})=>theme.backgroundColor.chatbotAnswer};
     border-radius: 10px;
     display: flex;
-    align-items: center;
+    text-align: left;
+    white-space: pre-line;
     padding: 20px 10px;
     @media (max-width:${({theme}) => theme.mobile} ) {
         margin: 0 10px ;
     }
+    
 `
