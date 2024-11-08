@@ -15,6 +15,8 @@ const theme = {
         btnBack: "#FFFFFF",
         userQuestion: '#CCCEDA',
         chatbotAnswer:'#FFFFFF',
+        cookieBack :'#FFFFFF',
+        cookieAccept: "#1A245A",
     },
     borderColor:{
         hoverBorder: "#1A245A",
