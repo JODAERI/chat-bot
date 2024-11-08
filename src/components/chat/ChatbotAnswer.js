@@ -31,6 +31,7 @@ const Wrapper = styled.div`
     @media (max-width:${({theme}) => theme.mobile} ) {
         width: 70%;
     }
+    padding-bottom: 100px;
 `
 
 const ContentsBox = styled.div`

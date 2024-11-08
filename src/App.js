@@ -38,7 +38,6 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     width: ${({theme}) => theme.tablet};;
-    //background: white;
     height: 100vh;
     overflow-y: scroll;
     -ms-overflow-style: none;
