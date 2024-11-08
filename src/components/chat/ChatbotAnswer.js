@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ChatBotTimeStamp from "./ChatBotTimeStamp";
-
+import ReactMarkdown from "react-markdown";
 function ChatbotAnswer({answer, timeStamp }) {
 
     return (
@@ -9,7 +9,9 @@ function ChatbotAnswer({answer, timeStamp }) {
                 <ContentsBox>
                     <ChatBotTimeStamp time={timeStamp}/>
                     <AnswerBox>
-                        {answer}
+                        <ReactMarkdown>
+                            {answer}
+                        </ReactMarkdown>
                     </AnswerBox>
                 </ContentsBox>
             </Wrapper>
@@ -39,7 +41,6 @@ const ContentsBox = styled.div`
 const AnswerBox = styled.div`
     background: ${({theme})=>theme.backgroundColor.chatbotAnswer};
     border-radius: 10px;
-    display: flex;
     text-align: left;
     white-space: pre-line;
     padding: 20px 10px;
