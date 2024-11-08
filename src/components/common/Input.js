@@ -23,16 +23,20 @@ export default Input;
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
-    padding-top: 45px;
-    margin-bottom: 10px;
+    margin: auto;
     
 `
 const InputBox = styled.div`
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    margin-bottom: 20px;
     border-radius: 10px;
     border: solid 1px ${({theme})=>theme.borderColor.inputBorder};
     height: 57px;
     background:  ${({theme})=>theme.backgroundColor.inputBack};
-    width: 80%;
+    width: 660px;
+
     display: flex;
     text-align: center;
     @media (max-width:${({theme}) => theme.mobile} ) {
