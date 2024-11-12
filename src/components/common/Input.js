@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {SendIcon} from "./icons";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 function Input() {
@@ -9,8 +9,16 @@ function Input() {
         setInputData(e.target.value)
     }
 
+    const handleKeyPress = (e)=>{
+        if(e.key ==='Enter'&& !e.shiftKey){
+            e.preventDefault(); // Prevents adding a new line
+            handleSend();
+        }
+    }
     const handleSend = ()=>{
-        console.log('엔터 누르면 실행')
+        if (inputData.trim() === '') return;
+        console.log('전송 내용:', inputData);
+        setInputData('');
     }
 
     return (
@@ -19,11 +27,12 @@ function Input() {
                 <InputBox>
                     <InputItem
                         type={'text'}
+                        value={inputData}
                         onChange={onChangeInputData}
-                        onKeyDown={(e)=>e.key ==='Enter'&&handleSend()}
+                        onKeyDown={handleKeyPress}
                         placeholder={'메세지를 입력해 주세요.'}/>
-                    <IconBox>
-                        <SendIcon onClick={handleSend}/>
+                    <IconBox onClick={handleSend}>
+                        <SendIcon/>
                     </IconBox>
                 </InputBox>
             </Wrapper>
