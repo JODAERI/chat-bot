@@ -1,21 +1,17 @@
 import CookieModal from "../../components/modal/CookieModal";
-import MainView from "../../components/main/MainView";
-import {useState} from "react";
+import MainView from "../../components/main/MainView"
+import {useCookie} from "../../components/common/useCookie";
 
 function MainPage() {
-    const [isAcceptCookie, setIsAcceptCookie] = useState(false);
-    const onChangeCookiePage= ()=>{
-        setIsAcceptCookie(true)
-    }
+    const { isCookieAccepted, onChangeCookies } = useCookie();
 
 
     return (
         <>
-            {isAcceptCookie ?(
+            {isCookieAccepted ?(
                 <MainView/>
             ):(
-                <CookieModal onChangeCookiePage={onChangeCookiePage}/>
-
+                <CookieModal onChangeCookiePage={onChangeCookies}/>
             )
             }
 
