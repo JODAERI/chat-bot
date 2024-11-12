@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import {ThemeProvider} from "styled-components";
 import theme from "./styles/theme";
-import {CookieProvider} from "./components/common/useCookie";
+import {CookieProvider} from "../src/components/store/useCookie";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
