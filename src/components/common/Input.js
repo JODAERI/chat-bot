@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {SendIcon} from "./icons";
+import {SendIcon} from "../../assets/icons";
 import {useState} from "react";
 
 

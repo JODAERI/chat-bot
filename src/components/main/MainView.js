@@ -1,11 +1,9 @@
 import {Link} from "react-router-dom";
-import {BtnIcons} from "./BtnIcons";
+import {BtnIcons} from "../../assets/BtnIcons";
 import MenuBtn from "./MenuBtn";
 import styled from "styled-components";
 
 function MainView() {
-
-
     return (
         <>
             <Wrapper>
