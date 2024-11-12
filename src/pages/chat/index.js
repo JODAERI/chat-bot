@@ -39,12 +39,12 @@ function Chat() {
         <>
             <UserQuestion question={'인증서 설치는 어떻게 하나요?'} timeStamp={'2.03 PM, 28 Sep'}/>
             <ChatbotAnswer answer={chatbotAnswer} timeStamp={'2.03 PM, 28 Sep'}/>
-            {/*<ProfileBox>*/}
-            {/*    <ChatBotTimeStamp time={'2.03 PM, 28 Sep'}/>*/}
-            {/*</ProfileBox>*/}
-            {/*{test.map((item)=>(*/}
-            {/*    <Recommendation question={item}/>*/}
-            {/*))}*/}
+            <ProfileBox>
+                <ChatBotTimeStamp time={'2.03 PM, 28 Sep'}/>
+            </ProfileBox>
+            {test.map((item)=>(
+                <Recommendation question={item}/>
+            ))}
 
         </>
 

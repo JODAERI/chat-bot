@@ -6,6 +6,7 @@ import Chat from "./pages/chat";
 import Header from "./components/common/Header";
 import Input from "./components/common/Input";
 import {useCookie} from "./components/store/useCookie";
+import Question from "./pages/question";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route path={'/'} element={<MainPage isCookieAccepted={isCookieAccepted} onChangeCookies={onChangeCookies} setCookie={setCookie}/>}/>
                     <Route path={'/chat'} element={<Chat/>}/>
+                    <Route path={'/question'} element={<Question/>}/>
                 </Routes>
             </Pages>
             <Input isCookieAccepted={isCookieAccepted}/>
