@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {SendIcon} from "./icons";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 
 function Input() {
@@ -11,7 +11,7 @@ function Input() {
 
     const handleKeyPress = (e)=>{
         if(e.key ==='Enter'&& !e.shiftKey){
-            e.preventDefault(); // Prevents adding a new line
+            e.preventDefault();
             handleSend();
         }
     }
