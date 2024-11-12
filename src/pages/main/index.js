@@ -1,9 +1,9 @@
 import CookieModal from "../../components/modal/CookieModal";
 import MainView from "../../components/main/MainView"
-import {useCookie} from "../../components/common/useCookie";
+import {useCookie} from "../../components/store/useCookie"
 
 function MainPage() {
-    const { isCookieAccepted, onChangeCookies } = useCookie();
+    const { isCookieAccepted, onChangeCookies, setCookie } = useCookie();
 
 
     return (
@@ -11,7 +11,7 @@ function MainPage() {
             {isCookieAccepted ?(
                 <MainView/>
             ):(
-                <CookieModal onChangeCookiePage={onChangeCookies}/>
+                <CookieModal onChangeCookiePage={onChangeCookies} setCookie={setCookie}/>
             )
             }
 
