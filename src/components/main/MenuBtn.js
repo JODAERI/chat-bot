@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 
-function MenuBtn({icon, text}) {
+function MenuBtn({icon, text, question}) {
     const formatText = (text) => {
         return text.replace(/\t/g, '\n');
     };
 
+    const postQuestion =()=>{
+        console.log(question)
+    }
+
     return (
         <>
-            <Container>
+            <Container onClick={postQuestion}>
                 <ItemBox>
                     <IconBox>
                         {icon}

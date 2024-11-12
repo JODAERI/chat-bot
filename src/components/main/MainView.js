@@ -4,6 +4,8 @@ import MenuBtn from "./MenuBtn";
 import styled from "styled-components";
 
 function MainView() {
+
+
     return (
         <>
             <Wrapper>
@@ -18,7 +20,7 @@ function MainView() {
                         <Link to={'/chat'} style={{ textDecoration: "none"}}>
                             <BtnItem>
                                 {BtnIcons.map((item) =>
-                                    <MenuBtn icon={item.icon()} text={item.text}/>
+                                    <MenuBtn icon={item.icon()} text={item.text} question={item.question}/>
                                 )}
                             </BtnItem>
                         </Link>
