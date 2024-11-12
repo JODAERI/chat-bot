@@ -3,7 +3,7 @@ import {SendIcon} from "./icons";
 import {useState} from "react";
 
 
-function Input() {
+function Input({isCookieAccepted}) {
     const [inputData, setInputData]=useState('')
     const onChangeInputData = (e)=>{
         setInputData(e.target.value)
@@ -30,8 +30,9 @@ function Input() {
                         value={inputData}
                         onChange={onChangeInputData}
                         onKeyDown={handleKeyPress}
+                        disabled={!isCookieAccepted}
                         placeholder={'메세지를 입력해 주세요.'}/>
-                    <IconBox onClick={handleSend}>
+                    <IconBox onClick={isCookieAccepted ? handleSend : null}>
                         <SendIcon/>
                     </IconBox>
                 </InputBox>
