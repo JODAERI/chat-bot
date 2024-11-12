@@ -20,7 +20,7 @@ function CookieModal({onChangeCookiePage}) {
                     </TextBox>
 
                     <AcceptBtn onClick={onChangeCookiePage}><p>모든 쿠키 허용</p></AcceptBtn>
-                    <SettingBtn><p>쿠키 설정</p></SettingBtn>
+                    <SettingBtn><p>쿠키 차단</p></SettingBtn>
                 </ContentsBox>
             </Wrapper>
         </>
