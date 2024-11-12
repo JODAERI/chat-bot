@@ -17,7 +17,7 @@ function MainView() {
                         무엇을 찾고 계신가요?
                     </ServiceDescription>
                     <BtnBox>
-                        <Link to={'/chat'} style={{ textDecoration: "none"}}>
+                        <Link to={'/question'} style={{ textDecoration: "none"}}>
                             <BtnItem>
                                 {BtnIcons.map((item) =>
                                     <MenuBtn icon={item.icon()} text={item.text} question={item.question}/>
