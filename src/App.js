@@ -5,19 +5,22 @@ import styled from "styled-components";
 import Chat from "./pages/chat";
 import Header from "./components/common/Header";
 import Input from "./components/common/Input";
+import {useCookie} from "./components/store/useCookie";
+
 
 function App() {
+    const { isCookieAccepted, onChangeCookies, setCookie } = useCookie();
   return (
     <Wrapper>
         <Container>
             <Header/>
             <Pages>
                 <Routes>
-                    <Route path={'/'} element={<MainPage/>}/>
+                    <Route path={'/'} element={<MainPage isCookieAccepted={isCookieAccepted} onChangeCookies={onChangeCookies} setCookie={setCookie}/>}/>
                     <Route path={'/chat'} element={<Chat/>}/>
                 </Routes>
             </Pages>
-            <Input/>
+            <Input isCookieAccepted={isCookieAccepted}/>
         </Container>
     </Wrapper>
   );
