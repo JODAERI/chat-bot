@@ -1,5 +1,6 @@
 export const BtnIcons =   [
     {
+        question: '인증서 설치하기',
         icon: ()=> (
             <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -13,6 +14,7 @@ export const BtnIcons =   [
         text: '인증서 \t 설치하기'
     },
     {
+        question: '증빙서류 설치하기',
         icon: () => (
             <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 15.75V0.75" stroke="#B2B6C8" stroke-width="1.5" stroke-miterlimit="10"
@@ -28,6 +30,7 @@ export const BtnIcons =   [
         text: '증빙서류 \t 설치하기'
     },
     {
+        question: '자격등록 설치하기',
         icon: ()=> (
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -41,6 +44,7 @@ export const BtnIcons =   [
         text: '자격등록 \t 확인하기'
     },
     {
+        question: '인증서 정보 등록하기',
         icon: ()=> (
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_104_473)">
