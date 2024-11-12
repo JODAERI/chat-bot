@@ -1,15 +1,29 @@
 import styled from "styled-components";
 import {SendIcon} from "./icons";
+import {useState} from "react";
 
 
 function Input() {
+    const [inputData, setInputData]=useState('')
+    const onChangeInputData = (e)=>{
+        setInputData(e.target.value)
+    }
+
+    const handleSend = ()=>{
+        console.log('엔터 누르면 실행')
+    }
+
     return (
         <>
             <Wrapper>
                 <InputBox>
-                    <InputItem placeholder={'메세지를 입력해 주세요.'}/>
+                    <InputItem
+                        type={'text'}
+                        onChange={onChangeInputData}
+                        onKeyDown={(e)=>e.key ==='Enter'&&handleSend()}
+                        placeholder={'메세지를 입력해 주세요.'}/>
                     <IconBox>
-                        <SendIcon/>
+                        <SendIcon onClick={handleSend}/>
                     </IconBox>
                 </InputBox>
             </Wrapper>
