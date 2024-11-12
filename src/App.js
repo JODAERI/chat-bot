@@ -10,7 +10,7 @@ import Question from "./pages/question";
 
 
 function App() {
-    const { isCookieAccepted, onChangeCookies, setCookie } = useCookie();
+    const { isCookieAccepted, onChangeCookies, setCookie, isFirst,onChangeIsFirst } = useCookie();
   return (
     <Wrapper>
         <Container>
