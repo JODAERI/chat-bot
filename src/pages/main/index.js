@@ -1,18 +1,21 @@
 import CookieModal from "../../components/modal/CookieModal";
-import MainView from "../../components/main/MainView"
+import MainView from "../../components/main/MainView";
 
-function MainPage( { isCookieAccepted, onChangeCookies,onChangeIsFirst,setQuickQuestion }) {
-    return (
-        <>
-            {isCookieAccepted ?(
-                <MainView onChangeIsFirst={onChangeIsFirst} setQuickQuestion={setQuickQuestion}/>
-            ):(
-                <CookieModal onChangeCookiePage={onChangeCookies} />
-            )
-            }
-        </>
-
-    );
+function MainPage({
+  isCookieAccepted,
+  onChangeCookies,
+  setQuickQuestion,
+  isLoading,
+}) {
+  return (
+    <>
+      {isCookieAccepted ? (
+        <MainView setQuickQuestion={setQuickQuestion} isLoading={isLoading} />
+      ) : (
+        <CookieModal onChangeCookiePage={onChangeCookies} />
+      )}
+    </>
+  );
 }
 
 export default MainPage;
