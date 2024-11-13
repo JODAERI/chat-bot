@@ -10,7 +10,7 @@ function MainPage({
   return (
     <>
       {isCookieAccepted ? (
-        <MainView setQuickQuestion={setQuickQuestion} isLoadin={isLoading} />
+        <MainView setQuickQuestion={setQuickQuestion} isLoading={isLoading} />
       ) : (
         <CookieModal onChangeCookiePage={onChangeCookies} />
       )}
