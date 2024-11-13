@@ -7,22 +7,63 @@ import Header from "./components/common/Header";
 import Input from "./components/common/Input";
 import {useCookie} from "./components/store/useCookie";
 import Question from "./pages/question";
+import NotFoundPage from "./pages/notFound";
+import {useState} from "react";
 
 
 function App() {
-    const { isCookieAccepted, onChangeCookies, setCookie, isFirst,onChangeIsFirst } = useCookie();
+    const { isCookieAccepted,
+        onChangeCookies,
+        isFirst,
+        onChangeIsFirst ,
+        quickQuestion,
+        setQuickQuestion ,
+        onChangeIsSecond,
+        isLoading,
+        onChangeLoading,
+        formatDate} = useCookie();
+    const [chatRefreshTrigger, setChatRefreshTrigger] = useState(false);
+
+    // `refreshChat` 함수를 통해 `chatRefreshTrigger` 상태를 변경
+    const refreshChat = () => setChatRefreshTrigger(prev => !prev);
   return (
     <Wrapper>
         <Container>
             <Header/>
             <Pages>
                 <Routes>
-                    <Route path={'/'} element={<MainPage isCookieAccepted={isCookieAccepted} onChangeCookies={onChangeCookies} setCookie={setCookie} isFirst={isFirst} onChangeIsFirst={onChangeIsFirst} />}/>
-                    <Route path={'/chat'} element={<Chat/>}/>
-                    <Route path={'/question'} element={<Question/>}/>
+                    <Route path={'/'} element={
+                        <MainPage
+                        isCookieAccepted={isCookieAccepted}
+                        onChangeCookies={onChangeCookies}
+                        onChangeIsFirst={onChangeIsFirst}
+                        setQuickQuestion={setQuickQuestion}/>}/>
+                    <Route path={'/chat'} element={
+                        <Chat
+                            formatDate={formatDate}
+                            chatRefreshTrigger={chatRefreshTrigger}
+                    />}/>
+                    <Route path={'/question'} element={
+                        <Question
+                            isLoading={isLoading}
+                            onChangeLoading={onChangeLoading}
+                        quickQuestion={quickQuestion}
+                        isFirst={isFirst}
+                        onChangeIsFirst={onChangeIsFirst}
+                        onChangeIsSecond={onChangeIsSecond}
+                            formatDate={formatDate}
+                        />}/>
+                    <Route path={'*'} element={<NotFoundPage/>}/>
+
                 </Routes>
             </Pages>
-            <Input isCookieAccepted={isCookieAccepted} isFirst={isFirst} onChangeIsFirst={onChangeIsFirst}/>
+            <Input
+                isCookieAccepted={isCookieAccepted}
+                isFirst={isFirst}
+                onChangeIsFirst={onChangeIsFirst}
+                onChangeIsSecond={onChangeIsSecond}
+                refreshChat={refreshChat} // `refreshChat`을 `Input`에 전달
+            />
         </Container>
     </Wrapper>
   );

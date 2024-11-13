@@ -1,16 +1,21 @@
 import styled from "styled-components";
 import ChatBotTimeStamp from "./ChatBotTimeStamp";
 import ReactMarkdown from "react-markdown";
-function ChatbotAnswer({answer, timeStamp }) {
+function ChatbotAnswer({answer, timeStamp,formatDate }) {
+    const cleanAnswerText=(answer)=> {
+        return answer
+            .replace(/```markdown\n/, '')
+            .replace(/\n```$/, '');
+    }
 
     return (
         <>
             <Wrapper>
                 <ContentsBox>
-                    <ChatBotTimeStamp time={timeStamp}/>
+                    <ChatBotTimeStamp time={timeStamp} formatDate={formatDate}/>
                     <AnswerBox>
                         <ReactMarkdown>
-                            {answer}
+                            {cleanAnswerText(answer)}
                         </ReactMarkdown>
                     </AnswerBox>
                 </ContentsBox>
@@ -43,10 +48,12 @@ const AnswerBox = styled.div`
     background: ${({theme})=>theme.backgroundColor.chatbotAnswer};
     border-radius: 10px;
     text-align: left;
-    white-space: pre-line;
-    padding: 20px 10px;
+    white-space: pre-wrap;
+    //width: 634px;
+    padding: 20px ;
     @media (max-width:${({theme}) => theme.mobile} ) {
         margin: 0 10px ;
+        width: 370px;
     }
     
 `

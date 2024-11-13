@@ -1,20 +1,42 @@
 import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
+import Cookies from "js-cookie";
+import postQuestion from "../../api/postQuestion";
 
-function Recommendation({question}) {
+function Recommendation({onChangeLoading, question,isFirst ,onChangeIsFirst, onChangeIsSecond}) {
     const navigate= useNavigate()
-    const  handleQuestion =()=>{
-        navigate('/chat')
-        // api 연동
-        console.log('handleQuestion')
+
+    const  handleQuestion =async()=>{
+        onChangeLoading(true);
+        try {
+            const userId = Cookies.get('user_id');
+            if (userId === undefined && isFirst === false) {
+                onChangeIsFirst();
+                await postQuestion( question,  true );
+            }
+            if (userId) {
+                onChangeIsSecond();
+                await postQuestion(question, false );
+            }
+        } catch (error) {
+            console.error("Failed to post question:", error);
+        } finally {
+            onChangeLoading(false);
+            navigate('/chat');
+        }
     }
 
     return (
-        <Wrapper onClick={handleQuestion}>
-            <QuestionBox>
-                <p>{question}</p>
-            </QuestionBox>
-        </Wrapper>
+        <>
+
+                <Wrapper onClick={handleQuestion}>
+                    <QuestionBox>
+                        <p>{question}</p>
+                    </QuestionBox>
+                </Wrapper>
+
+        </>
+
 
     );
 }

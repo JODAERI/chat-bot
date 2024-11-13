@@ -3,7 +3,7 @@ import {BtnIcons} from "../../assets/BtnIcons";
 import MenuBtn from "./MenuBtn";
 import styled from "styled-components";
 
-function MainView({isFirst, onChangeIsFirst}) {
+function MainView({onChangeIsFirst,setQuickQuestion}) {
     return (
         <>
             <Wrapper>
@@ -18,7 +18,14 @@ function MainView({isFirst, onChangeIsFirst}) {
                         <Link to={'/question'} style={{ textDecoration: "none"}}>
                             <BtnItem>
                                 {BtnIcons.map((item) =>
-                                    <MenuBtn icon={item.icon()} text={item.text} question={item.question} isFirst={isFirst} onChangeIsFirst={onChangeIsFirst} />
+                                    <MenuBtn
+                                        icon={item.icon()}
+                                        text={item.text}
+                                        question={item.question}
+                                        onChangeIsFirst={onChangeIsFirst}
+                                        setQuickQuestion={setQuickQuestion}
+
+                                    />
                                 )}
                             </BtnItem>
                         </Link>

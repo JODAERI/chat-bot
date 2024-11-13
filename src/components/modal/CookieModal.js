@@ -5,11 +5,9 @@ const cookieInformation = '본 AI 챗봇 서비스는 이전 **대화를 기억*
     '\n' +
     '쿠키 사용을 거부하실 경우, 기존 대화를 기억하지 못해 **매번 새로운 대화를 시작**해야 할 수 있습니다. 쿠키 사용에 대한 자세한 정보는 개인정보 처리방침에서 확인하실 수 있습니다.'
 
-
-function CookieModal({onChangeCookiePage,setCookie}) {
+function CookieModal({onChangeCookiePage}) {
     const acceptAllCookies = ()=>{
         onChangeCookiePage();
-        setCookie();
     }
 
     const blockCookie = ()=>{
