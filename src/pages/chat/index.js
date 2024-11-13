@@ -4,9 +4,12 @@ import { useEffect, useState } from "react";
 import getQnA from "../../api/getQnA";
 import Cookies from "js-cookie";
 import LoadingSpinner from "../../components/modal/LoadingSpinner";
+import { useNavigate } from "react-router-dom";
 
 function Chat({ isLoading, chatRefreshTrigger, formatDate }) {
   const [chatData, setChatData] = useState([]);
+  const navigate = useNavigate();
+
   const fetchData = async () => {
     const userId = Cookies.get("user_id");
     try {
@@ -14,6 +17,7 @@ function Chat({ isLoading, chatRefreshTrigger, formatDate }) {
       setChatData(response);
     } catch (e) {
       console.error("Failed to fetch chat data:", e);
+      navigate("/*");
     }
   };
 

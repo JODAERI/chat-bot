@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import postQuickQuestion from "../../api/postQuickQuestion";
+import { useNavigate } from "react-router-dom";
 
 function MenuBtn({ icon, text, question, setQuickQuestion }) {
+  const navigate = useNavigate();
   const formatText = (text) => {
     return text.replace(/\t/g, "\n");
   };
 
   const postQuestion = async () => {
-    const response = await postQuickQuestion({ question });
-    setQuickQuestion(response);
+    try {
+      const response = await postQuickQuestion({ question });
+      setQuickQuestion(response);
+    } catch (e) {
+      navigate("/*");
+    }
   };
   return (
     <>

@@ -32,6 +32,7 @@ function Input({ isCookieAccepted, refreshChat, onChangeLoading }) {
       refreshChat();
     } catch (error) {
       console.error("Failed to send question:", error);
+      navigate("/*");
     } finally {
       setInputData("");
       navigate("/chat");
