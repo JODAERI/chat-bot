@@ -2,36 +2,42 @@ import {Link} from "react-router-dom";
 import {BtnIcons} from "../../assets/BtnIcons";
 import MenuBtn from "./MenuBtn";
 import styled from "styled-components";
+import LoadingSpinner from "../modal/LoadingSpinner";
 
-function MainView({setQuickQuestion}) {
+function MainView({setQuickQuestion, isLoading}) {
     return (
         <>
-            <Wrapper>
-                <ContentsBox>
-                    <ServiceDescription>
-                        <ServiceComment>
-                            당신의 조달 등록을 도와드립니다.
-                        </ServiceComment>
-                        무엇을 찾고 계신가요?
-                    </ServiceDescription>
-                    <BtnBox>
-                        <Link to={'/question'} style={{ textDecoration: "none"}}>
-                            <BtnItem>
-                                {BtnIcons.map((item) =>
-                                    <MenuBtn
-                                        icon={item.icon()}
-                                        text={item.text}
-                                        question={item.question}
-                                        setQuickQuestion={setQuickQuestion}
+            {!isLoading ? (
+                <Wrapper>
+                    <ContentsBox>
+                        <ServiceDescription>
+                            <ServiceComment>
+                                당신의 조달 등록을 도와드립니다.
+                            </ServiceComment>
+                            무엇을 찾고 계신가요?
+                        </ServiceDescription>
+                        <BtnBox>
+                            <Link to={'/question'} style={{ textDecoration: "none"}}>
+                                <BtnItem>
+                                    {BtnIcons.map((item) =>
+                                        <MenuBtn
+                                            icon={item.icon()}
+                                            text={item.text}
+                                            question={item.question}
+                                            setQuickQuestion={setQuickQuestion}
 
-                                    />
-                                )}
-                            </BtnItem>
-                        </Link>
+                                        />
+                                    )}
+                                </BtnItem>
+                            </Link>
 
-                    </BtnBox>
-                </ContentsBox>
-            </Wrapper>
+                        </BtnBox>
+                    </ContentsBox>
+                </Wrapper>
+            ) : (
+                <LoadingSpinner/>
+            )}
+
         </>
 
     );

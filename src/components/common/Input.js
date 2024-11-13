@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import {useNavigate} from "react-router-dom";
 
 
-function Input({isCookieAccepted ,refreshChat}) {
+function Input({isCookieAccepted ,refreshChat, onChangeLoading}) {
     const [inputData, setInputData]=useState('')
     const navigate = useNavigate()
     const onChangeInputData = (e)=>{
@@ -22,6 +22,7 @@ function Input({isCookieAccepted ,refreshChat}) {
 
     const handleSend = async  ()=>{
         try {
+            onChangeLoading(true);
             const userId = Cookies.get('user_id');
             if (userId === undefined) {
                 await postQuestion( inputData, true );
@@ -33,11 +34,11 @@ function Input({isCookieAccepted ,refreshChat}) {
         } catch (error) {
             console.error("Failed to send question:", error);
         } finally {
-            navigate('/chat');
             setInputData('');
+            navigate('/chat');
+            onChangeLoading(false);
+
         }
-
-
     }
 
     return (

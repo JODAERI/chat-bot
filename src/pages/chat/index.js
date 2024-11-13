@@ -5,7 +5,7 @@ import getQnA from "../../api/getQnA";
 import Cookies from "js-cookie";
 import LoadingSpinner from "../../components/modal/LoadingSpinner";
 
-function Chat({chatRefreshTrigger,formatDate}) {
+function Chat({isLoading,chatRefreshTrigger,formatDate}) {
     const [chatData, setChatData] = useState([]);
     const fetchData = async () => {
         const userId = Cookies.get('user_id');
@@ -23,7 +23,7 @@ function Chat({chatRefreshTrigger,formatDate}) {
 
     return (
         <>
-            {chatData && chatData.qnas ? (
+            {chatData && chatData.qnas && !isLoading? (
                 chatData.qnas.map((item, index) => (
                     <div key={index}>
                         <UserQuestion question={item.question} timeStamp={item.question_created_at} formatDate={formatDate} />

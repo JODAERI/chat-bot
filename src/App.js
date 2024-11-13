@@ -32,9 +32,13 @@ function App() {
                         <MainPage
                         isCookieAccepted={isCookieAccepted}
                         onChangeCookies={onChangeCookies}
-                        setQuickQuestion={setQuickQuestion}/>}/>
+                        setQuickQuestion={setQuickQuestion}
+                        isLoading={isLoading}
+
+                        />}/>
                     <Route path={'/chat'} element={
                         <Chat
+                            isLoading={isLoading}
                             formatDate={formatDate}
                             chatRefreshTrigger={chatRefreshTrigger}
                     />}/>
@@ -50,6 +54,7 @@ function App() {
                 </Routes>
             </Pages>
             <Input
+                onChangeLoading={onChangeLoading}
                 isCookieAccepted={isCookieAccepted}
                 refreshChat={refreshChat}
             />
