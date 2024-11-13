@@ -3,7 +3,7 @@ import {SendIcon} from "../../assets/icons";
 import {useState} from "react";
 
 
-function Input({isCookieAccepted}) {
+function Input({isCookieAccepted ,isFirst,onChangeIsFirst  }) {
     const [inputData, setInputData]=useState('')
     const onChangeInputData = (e)=>{
         setInputData(e.target.value)
@@ -15,9 +15,10 @@ function Input({isCookieAccepted}) {
             handleSend();
         }
     }
+
     const handleSend = ()=>{
         if (inputData.trim() === '') return;
-        console.log('전송 내용:', inputData);
+        onChangeIsFirst();
         setInputData('');
     }
 

@@ -1,8 +1,16 @@
 import styled from "styled-components";
+import {useNavigate} from "react-router-dom";
 
 function Recommendation({question}) {
+    const navigate= useNavigate()
+    const  handleQuestion =()=>{
+        navigate('/chat')
+        // api 연동
+        console.log('handleQuestion')
+    }
+
     return (
-        <Wrapper>
+        <Wrapper onClick={handleQuestion}>
             <QuestionBox>
                 <p>{question}</p>
             </QuestionBox>

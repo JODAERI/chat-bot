@@ -17,12 +17,12 @@ function App() {
             <Header/>
             <Pages>
                 <Routes>
-                    <Route path={'/'} element={<MainPage isCookieAccepted={isCookieAccepted} onChangeCookies={onChangeCookies} setCookie={setCookie}/>}/>
+                    <Route path={'/'} element={<MainPage isCookieAccepted={isCookieAccepted} onChangeCookies={onChangeCookies} setCookie={setCookie} isFirst={isFirst} onChangeIsFirst={onChangeIsFirst} />}/>
                     <Route path={'/chat'} element={<Chat/>}/>
                     <Route path={'/question'} element={<Question/>}/>
                 </Routes>
             </Pages>
-            <Input isCookieAccepted={isCookieAccepted}/>
+            <Input isCookieAccepted={isCookieAccepted} isFirst={isFirst} onChangeIsFirst={onChangeIsFirst}/>
         </Container>
     </Wrapper>
   );
