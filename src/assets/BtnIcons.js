@@ -32,7 +32,7 @@ export const BtnIcons = [
     text: "인증서 \t 설치하기",
   },
   {
-    question: "증빙서류 설치하기",
+    question: "증빙서류 제출하기",
     icon: () => (
       <svg
         width="26"
@@ -70,7 +70,7 @@ export const BtnIcons = [
     text: "증빙서류 \t 설치하기",
   },
   {
-    question: "자격등록 설치하기",
+    question: "자격등록 확인하기",
     icon: () => (
       <svg
         width="30"
