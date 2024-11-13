@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import {ChatLogo} from "../../assets/ChatLogo";
 
-function ChatBotTimeStamp({time}) {
+function ChatBotTimeStamp({time, formatDate}) {
     return (
         <Wrapper>
             <LogoBox>
                 <ChatLogo/>
             </LogoBox>
-            <TimeStamp>{time}</TimeStamp>
+            <TimeStamp>{formatDate(time)}</TimeStamp>
         </Wrapper>
 
     );

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-function UserQuestion({question, timeStamp}) {
+function UserQuestion({question, timeStamp,formatDate}) {
     return (
         <>
             <Wrapper>
                 <ContentsBox>
                     <TimeStampBox>
-                        {timeStamp}
+                        {formatDate(timeStamp)}
                     </TimeStampBox>
                     <AnswerBox>
                         {question}
