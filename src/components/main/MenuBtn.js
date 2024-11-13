@@ -2,7 +2,7 @@ import styled from "styled-components";
 import postQuickQuestion from "../../api/postQuickQuestion";
 
 
-function MenuBtn({icon, text, question, isFirst, onChangeIsFirst}) {
+function MenuBtn({icon, text, question, onChangeIsFirst,setQuickQuestion}) {
     const formatText = (text) => {
         return text.replace(/\t/g, '\n');
     };
@@ -10,10 +10,8 @@ function MenuBtn({icon, text, question, isFirst, onChangeIsFirst}) {
     const postQuestion = async ()=>{
       const response = await postQuickQuestion({question});
         onChangeIsFirst()
-        console.log(response)
-        return response
+        setQuickQuestion(response)
     }
-
     return (
         <>
             <Container onClick={postQuestion}>
