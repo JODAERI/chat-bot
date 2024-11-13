@@ -1,12 +1,15 @@
 import CookieModal from "../../components/modal/CookieModal";
-import MainView from "../../components/main/MainView";
+import MainView from "../../components/main/MainView"
 
-function MainPage() {
+function MainPage( { isCookieAccepted, onChangeCookies, setCookie }) {
     return (
         <>
-            <CookieModal/>
-            {/*<MainView/>*/}
-
+            {isCookieAccepted ?(
+                <MainView/>
+            ):(
+                <CookieModal onChangeCookiePage={onChangeCookies} setCookie={setCookie}/>
+            )
+            }
         </>
 
     );

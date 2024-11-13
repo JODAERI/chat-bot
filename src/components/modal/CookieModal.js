@@ -1,10 +1,22 @@
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
-function CookieModal() {
-    const cookieInformation = '본 AI 챗봇 서비스는 이전 **대화를 기억**하여 보다 편리한 사용자 경험을 제공하기 위해 쿠키를 사용합니다. 로그인 없이도 대화가 유지되도록 하기 위해 쿠키를 저장하며, 이를 통해 사용자는 이전 대화를 이어갈 수 있습니다.\n' +
-        '\n' +
-        '쿠키 사용을 거부하실 경우, 기존 대화를 기억하지 못해 **매번 새로운 대화를 시작**해야 할 수 있습니다. 쿠키 사용에 대한 자세한 정보는 개인정보 처리방침에서 확인하실 수 있습니다.'
+const cookieInformation = '본 AI 챗봇 서비스는 이전 **대화를 기억**하여 보다 편리한 사용자 경험을 제공하기 위해 쿠키를 사용합니다. 로그인 없이도 대화가 유지되도록 하기 위해 쿠키를 저장하며, 이를 통해 사용자는 이전 대화를 이어갈 수 있습니다.\n' +
+    '\n' +
+    '쿠키 사용을 거부하실 경우, 기존 대화를 기억하지 못해 **매번 새로운 대화를 시작**해야 할 수 있습니다. 쿠키 사용에 대한 자세한 정보는 개인정보 처리방침에서 확인하실 수 있습니다.'
+
+
+function CookieModal({onChangeCookiePage,setCookie}) {
+    const acceptAllCookies = ()=>{
+        onChangeCookiePage();
+        setCookie();
+    }
+
+    const blockCookie = ()=>{
+        onChangeCookiePage();
+
+    }
+
 
     return (
         <>
@@ -17,8 +29,8 @@ function CookieModal() {
                         </ReactMarkdown>
                     </TextBox>
 
-                    <AcceptBtn><p>모든 쿠키 허용</p></AcceptBtn>
-                    <SettingBtn><p>쿠키 설정</p></SettingBtn>
+                    <AcceptBtn onClick={acceptAllCookies}><p>모든 쿠키 허용</p></AcceptBtn>
+                    <SettingBtn onClick={blockCookie}><p>쿠키 차단</p></SettingBtn>
                 </ContentsBox>
             </Wrapper>
         </>

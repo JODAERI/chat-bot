@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ChatLogo} from "./ChatLogo";
+import {ChatLogo} from "../../assets/ChatLogo";
 
 function ChatBotTimeStamp({time}) {
     return (

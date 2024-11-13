@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {BtnIcons} from "./BtnIcons";
+import {BtnIcons} from "../../assets/BtnIcons";
 import MenuBtn from "./MenuBtn";
 import styled from "styled-components";
 
@@ -15,10 +15,10 @@ function MainView() {
                         무엇을 찾고 계신가요?
                     </ServiceDescription>
                     <BtnBox>
-                        <Link to={'/chat'} style={{ textDecoration: "none"}}>
+                        <Link to={'/question'} style={{ textDecoration: "none"}}>
                             <BtnItem>
                                 {BtnIcons.map((item) =>
-                                    <MenuBtn icon={item.icon()} text={item.text}/>
+                                    <MenuBtn icon={item.icon()} text={item.text} question={item.question}/>
                                 )}
                             </BtnItem>
                         </Link>

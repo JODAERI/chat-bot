@@ -1,14 +1,38 @@
 import styled from "styled-components";
-import {SendIcon} from "./icons";
+import {SendIcon} from "../../assets/icons";
+import {useState} from "react";
 
 
-function Input() {
+function Input({isCookieAccepted}) {
+    const [inputData, setInputData]=useState('')
+    const onChangeInputData = (e)=>{
+        setInputData(e.target.value)
+    }
+
+    const handleKeyPress = (e)=>{
+        if(e.key ==='Enter'&& !e.shiftKey){
+            e.preventDefault();
+            handleSend();
+        }
+    }
+    const handleSend = ()=>{
+        if (inputData.trim() === '') return;
+        console.log('전송 내용:', inputData);
+        setInputData('');
+    }
+
     return (
         <>
             <Wrapper>
                 <InputBox>
-                    <InputItem placeholder={'메세지를 입력해 주세요.'}/>
-                    <IconBox>
+                    <InputItem
+                        type={'text'}
+                        value={inputData}
+                        onChange={onChangeInputData}
+                        onKeyDown={handleKeyPress}
+                        disabled={!isCookieAccepted}
+                        placeholder={'메세지를 입력해 주세요.'}/>
+                    <IconBox onClick={isCookieAccepted ? handleSend : null}>
                         <SendIcon/>
                     </IconBox>
                 </InputBox>
