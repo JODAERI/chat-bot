@@ -3,19 +3,17 @@ import {useNavigate} from "react-router-dom";
 import Cookies from "js-cookie";
 import postQuestion from "../../api/postQuestion";
 
-function Recommendation({onChangeLoading, question,isFirst ,onChangeIsFirst, onChangeIsSecond}) {
+function Recommendation({onChangeLoading, question}) {
     const navigate= useNavigate()
 
     const  handleQuestion =async()=>{
         onChangeLoading(true);
         try {
             const userId = Cookies.get('user_id');
-            if (userId === undefined && isFirst === false) {
-                onChangeIsFirst();
+            if (userId === undefined ) {
                 await postQuestion( question,  true );
             }
             if (userId) {
-                onChangeIsSecond();
                 await postQuestion(question, false );
             }
         } catch (error) {

@@ -1,11 +1,11 @@
 import CookieModal from "../../components/modal/CookieModal";
 import MainView from "../../components/main/MainView"
 
-function MainPage( { isCookieAccepted, onChangeCookies,onChangeIsFirst,setQuickQuestion }) {
+function MainPage( { isCookieAccepted, onChangeCookies,setQuickQuestion }) {
     return (
         <>
             {isCookieAccepted ?(
-                <MainView onChangeIsFirst={onChangeIsFirst} setQuickQuestion={setQuickQuestion}/>
+                <MainView setQuickQuestion={setQuickQuestion}/>
             ):(
                 <CookieModal onChangeCookiePage={onChangeCookies} />
             )

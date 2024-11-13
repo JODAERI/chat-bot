@@ -14,17 +14,13 @@ import {useState} from "react";
 function App() {
     const { isCookieAccepted,
         onChangeCookies,
-        isFirst,
-        onChangeIsFirst ,
         quickQuestion,
         setQuickQuestion ,
-        onChangeIsSecond,
         isLoading,
         onChangeLoading,
         formatDate} = useCookie();
     const [chatRefreshTrigger, setChatRefreshTrigger] = useState(false);
 
-    // `refreshChat` 함수를 통해 `chatRefreshTrigger` 상태를 변경
     const refreshChat = () => setChatRefreshTrigger(prev => !prev);
   return (
     <Wrapper>
@@ -36,7 +32,6 @@ function App() {
                         <MainPage
                         isCookieAccepted={isCookieAccepted}
                         onChangeCookies={onChangeCookies}
-                        onChangeIsFirst={onChangeIsFirst}
                         setQuickQuestion={setQuickQuestion}/>}/>
                     <Route path={'/chat'} element={
                         <Chat
@@ -48,9 +43,6 @@ function App() {
                             isLoading={isLoading}
                             onChangeLoading={onChangeLoading}
                         quickQuestion={quickQuestion}
-                        isFirst={isFirst}
-                        onChangeIsFirst={onChangeIsFirst}
-                        onChangeIsSecond={onChangeIsSecond}
                             formatDate={formatDate}
                         />}/>
                     <Route path={'*'} element={<NotFoundPage/>}/>
@@ -59,10 +51,7 @@ function App() {
             </Pages>
             <Input
                 isCookieAccepted={isCookieAccepted}
-                isFirst={isFirst}
-                onChangeIsFirst={onChangeIsFirst}
-                onChangeIsSecond={onChangeIsSecond}
-                refreshChat={refreshChat} // `refreshChat`을 `Input`에 전달
+                refreshChat={refreshChat}
             />
         </Container>
     </Wrapper>

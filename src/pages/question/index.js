@@ -3,7 +3,7 @@ import Recommendation from "../../components/chat/Recommendation";
 import ChatBotTimeStamp from "../../components/chat/ChatBotTimeStamp";
 import LoadingSpinner from "../../components/modal/LoadingSpinner";
 
-function Question({isLoading,onChangeLoading,quickQuestion, isFirst, onChangeIsFirst,onChangeIsSecond, formatDate}) {
+function Question({isLoading,onChangeLoading,quickQuestion, formatDate}) {
     return (
         <>
             {quickQuestion && !isLoading ? (
@@ -12,7 +12,7 @@ function Question({isLoading,onChangeLoading,quickQuestion, isFirst, onChangeIsF
                         <ChatBotTimeStamp time={quickQuestion.time} formatDate={formatDate} />
                     </ProfileBox>
                     {quickQuestion.questions && quickQuestion.questions.map((item, index) => (
-                        <Recommendation key={index} onChangeLoading={onChangeLoading} question={item} isFirst={isFirst} onChangeIsFirst={onChangeIsFirst} onChangeIsSecond={onChangeIsSecond}/>
+                        <Recommendation key={index} onChangeLoading={onChangeLoading} question={item}/>
                     ))}
                 </>
             ) : (

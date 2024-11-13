@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import {useNavigate} from "react-router-dom";
 
 
-function Input({isCookieAccepted ,isFirst,onChangeIsFirst,onChangeIsSecond,refreshChat  }) {
+function Input({isCookieAccepted ,refreshChat}) {
     const [inputData, setInputData]=useState('')
     const navigate = useNavigate()
     const onChangeInputData = (e)=>{
@@ -23,19 +23,17 @@ function Input({isCookieAccepted ,isFirst,onChangeIsFirst,onChangeIsSecond,refre
     const handleSend = async  ()=>{
         try {
             const userId = Cookies.get('user_id');
-            if (userId === undefined && isFirst === false) {
-                onChangeIsFirst();
+            if (userId === undefined) {
                 await postQuestion( inputData, true );
             } else {
-                onChangeIsSecond();
                 await postQuestion( inputData, false );
             }
             console.log('chatRefreshTrigger');
-            refreshChat(); // 새로운 질문을 전송한 후 `refreshChat` 호출
+            refreshChat();
         } catch (error) {
             console.error("Failed to send question:", error);
         } finally {
-            navigate('/chat'); // Chat 페이지로 이동
+            navigate('/chat');
             setInputData('');
         }
 

@@ -3,7 +3,7 @@ import {BtnIcons} from "../../assets/BtnIcons";
 import MenuBtn from "./MenuBtn";
 import styled from "styled-components";
 
-function MainView({onChangeIsFirst,setQuickQuestion}) {
+function MainView({setQuickQuestion}) {
     return (
         <>
             <Wrapper>
@@ -22,7 +22,6 @@ function MainView({onChangeIsFirst,setQuickQuestion}) {
                                         icon={item.icon()}
                                         text={item.text}
                                         question={item.question}
-                                        onChangeIsFirst={onChangeIsFirst}
                                         setQuickQuestion={setQuickQuestion}
 
                                     />
