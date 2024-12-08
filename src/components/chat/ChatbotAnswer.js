@@ -41,7 +41,6 @@ const AnswerBox = styled.div`
   border-radius: 10px;
   text-align: left;
   white-space: pre-wrap;
-  //width: 634px;
   padding: 20px;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin: 0 10px;
