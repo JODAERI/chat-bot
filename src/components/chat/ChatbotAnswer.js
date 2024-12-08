@@ -47,7 +47,7 @@ const AnswerBox = styled.div`
     width: 370px;
   }
   h1, h2, h3, h4, h5, h6 {
-    margin: 0px 10px 0px 0px;
+    margin: 0px 8px 0px 0px;
   }
   ol, ul {
   margin: 0;
@@ -55,10 +55,10 @@ const AnswerBox = styled.div`
 }
 
   li {
-    margin-bottom: 0px 8px 0px 0px;; 
+    margin-bottom: 0px 5px 0px 0px;; 
   }
   p {
-    margin:  0px 8px 0px 0px;;
+    margin:  0px 5px 0px 0px;;
   }
 
 `;
