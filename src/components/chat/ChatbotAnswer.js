@@ -47,4 +47,7 @@ const AnswerBox = styled.div`
     margin: 0 10px;
     width: 370px;
   }
+  p{
+    margin: 0;
+  }
 `;
