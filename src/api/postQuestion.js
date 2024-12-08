@@ -7,6 +7,7 @@ export default async function postQuestion(question, isFirst) {
       const response = await axiosInstance.post("/api/question", {
         question: question,
         is_first: isFirst,
+        is_short: false,
       });
       Cookies.set("user_id", response.data.userId);
       return response.data;
