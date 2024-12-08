@@ -52,15 +52,15 @@ const AnswerBox = styled.div`
   ul {
     margin: 0; 
     padding-left: 20px; 
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   li {
-    margin-bottom: 8px; 
+    margin-bottom: 6px; 
   }
   p {
     margin: 0;
-    margin-bottom: 12px; 
+    margin-bottom: 8px; 
   }
 
 `;
