@@ -18,6 +18,7 @@ export default async function postQuestion(question, isFirst) {
         user_id: userId,
         question: question,
         is_first: isFirst,
+        is_short: false,
       });
       return response.data;
     }
