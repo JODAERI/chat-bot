@@ -47,7 +47,21 @@ const AnswerBox = styled.div`
     margin: 0 10px;
     width: 370px;
   }
-  p{
-    margin: 0;
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px; 
   }
+  ul {
+    margin: 0; 
+    padding-left: 20px; 
+    margin-bottom: 12px;
+  }
+
+  li {
+    margin-bottom: 8px; 
+  }
+  p {
+    margin: 0;
+    margin-bottom: 12px; 
+  }
+
 `;
