@@ -47,18 +47,18 @@ const AnswerBox = styled.div`
     width: 370px;
   }
   h1, h2, h3, h4, h5, h6 {
-    margin: 10px 0;
+    margin: 0px 10px 0px 0px;
   }
-  ul {
-    margin: 8px 0; 
-    padding-left: 20px; 
-  }
+  ol, ul {
+  margin: 0;
+  padding-left: 20px;
+}
 
   li {
-    margin-bottom: 6px; 
+    margin-bottom: 0px 8px 0px 0px;; 
   }
   p {
-    margin: 8px 0;
+    margin:  0px 8px 0px 0px;;
   }
 
 `;
