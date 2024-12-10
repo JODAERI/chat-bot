@@ -5,6 +5,7 @@ export default async function postQuestion(question, isFirst) {
   try {
     if (isFirst === true) {
       const response = await axiosInstance.post("/api/question", {
+        user_id: null,
         question: question,
         is_first: isFirst,
         is_short: false,
